@@ -1,0 +1,1 @@
+[{"id": 2, "prefix": "mat", "number": "303", "sem": "Spring", "year": "2019"}, {"id": 3, "prefix": "eng", "number": "201", "sem": "Spring", "year": "2018"}, {"id": 10, "prefix": "csc", "number": "120", "sem": "fall", "year": "2019"}]

@@ -1,0 +1,3 @@
+{ "Semester" : {{ request.GET.semester }},
+  "Year" : {{ request.GET.year }},
+ }

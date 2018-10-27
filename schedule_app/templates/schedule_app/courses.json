@@ -1,0 +1,68 @@
+{
+  "department": {
+    "math-deparment": {
+      "year": {
+        "2018": {
+          "fall": {
+            "prefix": {
+              "csc": {
+                "code": {
+                  "103": {
+                    "name": "Creative Computing",
+                    "loadhours": "3"
+                  },
+                  "120": {
+                    "name": "Designing Programs",
+                    "loadhours": "5"
+                  },
+                  "219": {
+                    "name": "Discrete Structures",
+                    "loadhours": "3"
+                  },
+                  "225": {
+                    "name": "Data Strucutures & Algorithms",
+                    "loadhours": "3"
+                  },
+                  "235": {
+                    "name": "Physical Computing",
+                    "loadhours": "3"
+                  },
+                  "315": {
+                    "name": "Theoretical Topics in Computer Science",
+                    "loadhours": "3"
+                  },
+                  "345": {
+                    "name": "Elements of Computing Systems",
+                    "loadhours": "3"
+                  }
+                }
+              },
+              "mat": {
+                "code": {
+                  "201": {
+                    "name": "Calculus I",
+                    "loadhours": "4"
+                  },
+                  "202": {
+                    "name": "Calculus II",
+                    "loadhours": "4"
+                  },
+                  "203": {
+                    "name": "Calculus III",
+                    "loadhours": "4"
+                  },
+                  "303": {
+                    "name": "Linear Algebra",
+                    "loadhours": "3"
+                  },
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
