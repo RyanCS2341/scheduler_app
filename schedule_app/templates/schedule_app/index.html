@@ -2,57 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home Page</title>
+    {% block title%}
+    {% endblock %}
 
-    <style>
-      body {
-        margin: 0px;
-        padding: 0px;
-      }
-      .nav-bar ul {
-        margin: 0px 0px 0px;
-        padding: 8px 8px;
-        background-color: rgba(196, 66, 66, 0.74);
-      }
-      .nav-bar li {
-        list-style: none;
-        display: inline;
-        color: white;
-        font-family: sans-serif;
-        font-size: 13pt;
-      }
-      .nav-bar a {
-        text-decoration: none;
-        padding-left: 10px;
-      }
-      a:link {
-          color: white;
-          font-family: sans-serif;
-          font-size: 13pt;
-      }
-      a:visited {
-          color: white;
-      }
-      a:hover {
-          color: rgb(184, 183, 194);
-      }
-      a:active {
-          color: rgb(92, 191, 161);
-      }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'schedule_app/index.css' %}">
+    <script src="{% static 'schedule_app/index.js' %}"></script>
 
   </head>
   <body>
 
     <div class="nav-bar">
       <ul>
-        <li> <a href="{% url 'schedule-home' %}"><strong>Home</strong></a> </li>
-        <li> <a href="{% url 'schedule-schedule' %}"><strong>Schedule</strong></a> </li>
+        <li> <a id="clear"><strong>Clear</strong></a> </li>
+        <li>
+        <!-- <form action="/search/" method="post" > {% csrf_token %} -->
+        <!-- <form > {% csrf_token %} -->
+        <li style="padding-left: 15px;"> <strong>Search:</strong> <input type="text" id="prefix" placeholder="Enter Course Prefix"> </li>
+          <!-- <li> <button type="sumbit" name="button" id="course-find">Submit</button> </li> -->
+        <li> <button id="course-find">Submit</button> </li>
+        <!-- </form> -->
+        </li>
         {% if user.is_authenticated %}
-          <li style="color:blue; padding-left: 20px;"><strong>User: {{ user.get_username|capfirst }}</strong></li>
+          <li style="color:white; padding-left: 20px;"><strong>User: {{ user.get_username|capfirst }}</strong></li>
           <li><a href="accounts/logout/" style="float:right;"><strong>Logout</strong></a></li>
         {% else %}
-          <li><a href="accounts/login/" style="float:right;"><strong>Login</strong></a></li>
+          <li><a href="https://localhost:8000/accounts/office365/login/?process=login" style="float:right;"><strong>Login</strong></a></li>
         {% endif %}
       </ul>
     </div>
@@ -60,5 +35,6 @@
     {% block content %}
 
     {% endblock %}
+
   </body>
 </html>

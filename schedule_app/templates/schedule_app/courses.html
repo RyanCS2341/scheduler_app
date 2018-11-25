@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <form action="/add/" method="post"> {% csrf_token %}
+          Semester: <input type="text" name="semester"></br>
+          Year: <input type="text" name="year"></br>
+          Prefix: <input type="text" name="prefix"></br>
+          Number: <input type="text" name="course_num"></br>
+          Hours: <input type="text" name="hours"></br>
+          Professor: <input type="text" name="professor"></br>
+          <input type="submit" value="Add">
+      </form>
+      
+      <ul>
+        {% for course in all_courses %}
+        <li>{{ course }}</li>
+        {% endfor %}
+      </ul>
+  </body>
+</html>
