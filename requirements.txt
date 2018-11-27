@@ -3,7 +3,6 @@ chardet==3.0.4
 defusedxml==0.5.0
 Django==2.1.1
 django-allauth==0.38.0
-django-allauth-office365==0.0.1
 django-cors-headers==2.4.0
 django-microsoft-auth==1.1.1
 django-sslserver==0.20
