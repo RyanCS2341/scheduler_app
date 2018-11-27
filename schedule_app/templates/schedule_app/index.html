@@ -14,6 +14,7 @@
 
     <div class="nav-bar">
       <ul>
+        <li> <a href="{% url 'schedule-test' %}"><strong>Add</strong></a> </li>
         <li> <a id="clear"><strong>Clear</strong></a> </li>
         <li>
         <!-- <form action="/search/" method="post" > {% csrf_token %} -->
@@ -25,7 +26,8 @@
         </li>
         {% if user.is_authenticated %}
           <li style="color:white; padding-left: 20px;"><strong>User: {{ user.get_username|capfirst }}</strong></li>
-          <li><a href="accounts/logout/" style="float:right;"><strong>Logout</strong></a></li>
+          <!-- <li><a href="accounts/logout/" style="float:right;"><strong>Logout</strong></a></li> -->
+          <li><a href="{% url 'log-out' %}" style="float:right;"><strong>Logout</strong></a></li>
         {% else %}
           <li><a href="https://localhost:8000/accounts/office365/login/?process=login" style="float:right;"><strong>Login</strong></a></li>
         {% endif %}

@@ -2,9 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    {% block title%}
+    <title>Add Course</title>
+    {% endblock %}
   </head>
   <body>
+      <h3><a href="{% url 'schedule-home' %}">Return Home</a></h3>
       <form action="/add/" method="post"> {% csrf_token %}
           Semester: <input type="text" name="semester"></br>
           Year: <input type="text" name="year"></br>
@@ -14,11 +17,5 @@
           Professor: <input type="text" name="professor"></br>
           <input type="submit" value="Add">
       </form>
-      
-      <ul>
-        {% for course in all_courses %}
-        <li>{{ course }}</li>
-        {% endfor %}
-      </ul>
   </body>
 </html>

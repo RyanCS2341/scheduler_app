@@ -11,6 +11,7 @@
 
   function fetchCourses() {
     fetch("http://localhost:8000/list/")
+    // fetch("https://localhost:8000/list/")
       .then(checkStatus)
       .then(JSON.parse)
       .then(displayCourses)
