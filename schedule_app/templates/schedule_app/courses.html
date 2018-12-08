@@ -7,7 +7,7 @@
     {% endblock %}
   </head>
   <body>
-      <h3><a href="{% url 'schedule-home' %}">Return Home</a></h3>
+      <h3><a href="{% url 'base-view' %}">Return Home</a></h3>
       <form action="/add/" method="post"> {% csrf_token %}
           Semester: <input type="text" name="semester"></br>
           Year: <input type="text" name="year"></br>

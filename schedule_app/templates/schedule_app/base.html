@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'schedule_app/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="main-nav">
+
+      <div class="home-container">
+        <a href="{% url 'base-view' %}">
+          <div class="home-img">
+            <i class="fa fa-home" style="font-size:30px;"></i>
+          </div>
+        </a>
+      </div>
+
+      {% block search%}
+      {% endblock %}
+
+      <div class="search-container">
+        <input class="search-bar" placeholder="Search">
+        </input>
+        <div class="search-button">
+          <a href="#"><i class="fa fa-search" style="font-size:20px;"></i></a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <div class="link">
+          {% if user.is_authenticated %}
+          <strong>Welcome, {{ user.get_username|capfirst }}</strong>
+          <a href="{% url 'log-out' %}">| Logout</a>
+            <!-- <li><a href="accounts/logout/" style="float:right;"><strong>Logout</strong></a></li> -->
+          {% else %}
+            <a href="https://localhost:8000/accounts/office365/login/?process=login">Login</a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="main-content">
+
+      <div class="side-bar">
+        <div class="job-header">
+          <div id="job-appendix">Course Plans</div>
+        </div>
+
+        <div id="term-list">
+          <ul>
+            {% for term in terms %}
+            <li><a href="/term/{{term.id}}/">{{ term }}</a></li>
+            {% endfor%}
+          </ul>
+        </div>
+      </div>
+
+      <div class="view-port">
+        {% block test %}
+        {% endblock %}
+      </div>
+
+    </div>
+
+  </body>
+</html>

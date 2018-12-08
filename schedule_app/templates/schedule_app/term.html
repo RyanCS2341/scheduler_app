@@ -1,0 +1,13 @@
+{% extends 'schedule_app/base.html' %}
+
+{% for term in terms %}
+<li><a href="/term/{{term.id}}/">{{ term }}</a></li>
+{% endfor%}
+
+{% block test %}
+    <ul>
+      {% for i in name %}
+        <li>{{i}}</li>
+      {% endfor %}
+    </ul>
+{% endblock %}

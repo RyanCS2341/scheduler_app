@@ -1,18 +1,17 @@
-from django.urls import path
+from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    path('', views.home, name="schedule-home"),
-    path('add/', views.add, name='schedule-add'),
-    path('list/', views.courseList, name='course-list'),
-    path('addcourse/', views.viewCourses, name='schedule-test'),
-    path('logout/', views.log, name='log-out'),
-
-    # USELESS
-    # path('search/', views.search, name='schedule-add'),
-
-
-    path('addcourse/', views.addCourse, name='schedule-add'),
-    path('removecourse/', views.removeCourse, name='schedule-remove'),
-    path('courselist/', views.listCourses, name='schedule-courseList'),
+    url(r'^$', views.home, name='base-view'),
+    url(r'^add/', views.add, name='schedule-add-post'),
+    url(r'^list/', views.courseList, name='course-list'), # returns JSON for all courses
+    url(r'^addcourse/', views.addCourse, name='schedule-add'),
+    url(r'^logout/', views.log, name='log-out'),
+    url(r'^term/(?P<id>\d+)/$', views.term_detail, name='term-detail'),
 ]
+
+# CREATE
+# READ
+# UPDATE
+# DELETE
